@@ -1,0 +1,29 @@
+<div class="card">
+	<p-table [value]="cars" [scrollable]="true" scrollHeight="335px" [resizableColumns]="true"
+		styleClass="p-datatable-gridlines">
+		<ng-template pTemplate="colgroup">
+			<colgroup>
+				<col style="width:25%">
+				<col style="width:15%">
+				<col style="width:35%">
+				<col style="width:25%">
+			</colgroup>
+		</ng-template>
+		<ng-template pTemplate="header">
+			<tr>
+				<th pResizableColumn pSortableColumn="vin"> <p-sortIcon field="vin"> </p-sortIcon> Vin </th>
+                <th pResizableColumn pSortableColumn="year"> <p-sortIcon field="year"> </p-sortIcon> Year </th>
+                <th pResizableColumn pSortableColumn="brand"> <p-sortIcon field="brand"></p-sortIcon> Brand </th>
+                <th pResizableColumn pSortableColumn="color"> <p-sortIcon field="color"></p-sortIcon> Color </th>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="body" let-car>
+			<tr>
+				<td>{{car.vin}}</td>
+				<td>{{car.year}}</td>
+				<td>{{car.brand}}</td>
+				<td>{{car.color}}</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</div>
